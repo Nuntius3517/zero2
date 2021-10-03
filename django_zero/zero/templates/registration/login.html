@@ -1,0 +1,33 @@
+
+
+
+
+
+{% block content %}
+
+<form method="post" action=".">
+	{%csrf_token%}
+<div>
+	<td>{{form.username.label_tag}}</td>
+	<td>{{form.username}}</td>
+</div>
+<div>
+	<td>{{form.password.label_tag}}</td>
+	<td>{{form.password}}</td>
+</div>
+
+<div>
+	{{form.otp_token.label_tag}}{{form.otp_token}}
+</div>	
+
+<div>
+	<input type="submit" value="Log in"/>
+	{% if form.get_user %}<input type="submit" name="otp_challenge" value="Get Challenge"/>{% endif %}
+</div>
+</form>
+
+<p><a href="">Lost password?</a></p>
+
+{% endblock %}
+
+

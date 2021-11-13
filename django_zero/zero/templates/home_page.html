@@ -1,6 +1,11 @@
 {% extends "base_generic.html" %}
 
+{% if user.is_authenticated %}
 <p><a href="localhost:80">JENKINS</p>
-<p><a href="{% url 'login' %}">LOGIN PAGE</a></p>
+{% endif %}
+
+
+<p><a href="{% url 'login' %}">IF you can't see the page. Click here to login</a></p>
+
 
 

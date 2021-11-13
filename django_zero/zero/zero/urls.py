@@ -24,7 +24,6 @@ admin.site.__class__ = OTPAdminSite
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/login/',LoginView.as_view(authentication_form=OTPAuthenticationForm)), 
-    #path('accounts/',include('django.contrib.auth.urls')),
     path('',views.home_page),
     path('auth/',views.auth),
 ]
